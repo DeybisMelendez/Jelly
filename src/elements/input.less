@@ -1,0 +1,25 @@
+input[type="password"],
+input[type="text"],
+//input[type="date"],
+input[type="textarea"],
+input[type="email"],
+input[type="number"],
+input[type="tel"],
+input[type="search"] {
+	width: 100%;
+}
+
+input {
+	padding: 12px;
+	margin-bottom: 6px;
+	margin-top: 6px;
+	border: 1px solid @black;
+	outline: none;
+	vertical-align: middle;
+	border-radius: 8px;
+	background-color: @white;
+	color: @navy;
+	&:focus {
+		border-color: @blue;
+	}
+}

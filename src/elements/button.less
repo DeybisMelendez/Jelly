@@ -1,0 +1,15 @@
+.button {
+	text-align: center;
+	border: none;
+	padding: 6px 12px;
+	min-width: 80px;
+	min-height: 20px;
+	border-radius: 5px;
+	&:hover:enabled {
+		filter: brightness(1.2);
+	}
+	&:disabled {
+		background-color: @gray;
+		color: @white;
+	}
+}
