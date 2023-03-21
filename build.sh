@@ -1,1 +1,1 @@
-sudo lessc -clean-css src/visible-border.less visible-border.min.css
+lessc -clean-css src/visible-border.less visible-border.min.css
