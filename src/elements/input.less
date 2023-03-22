@@ -1,15 +1,24 @@
 input[type="password"],
 input[type="text"],
-//input[type="date"],
+input[type="date"],
+input[type="datetime"],
 input[type="textarea"],
 input[type="email"],
 input[type="number"],
 input[type="tel"],
-input[type="search"] {
+input[type="search"],
+input[type="submit"],
+textarea {
 	width: 100%;
 }
+input[type="submit"] {
+	border: 0px;
+	.button;
+	min-height: 36px;
+}
 
-input {
+input,
+textarea {
 	padding: 12px;
 	margin-bottom: 6px;
 	margin-top: 6px;
@@ -19,7 +28,9 @@ input {
 	border-radius: 8px;
 	background-color: @white;
 	color: @navy;
-	&:focus {
+	transition: @transition;
+	&:focus,
+	&:hover {
 		border-color: @blue;
 	}
 }
