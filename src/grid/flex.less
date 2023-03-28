@@ -1,8 +1,27 @@
-.row {
+@flex-columns: 12;
+.flex {
 	display: flex;
 	flex-flow: row wrap;
-}
+	//Generate columnsumn classes for grid
+	.generate-flex(s,@flex-columns);
 
+	@media @from-mid {
+		.generate-flex(m,@flex-columns);
+	}
+	@media @from-large {
+		.generate-flex(l,@flex-columns);
+	}
+	@media @from-extra-large {
+		.generate-flex(xl,@flex-columns);
+	}
+}
+.generate-flex(@type, @number, @i: 1) when (@i =< @number) {
+	.@{type}@{i} {
+		flex-basis: (@i / @number) * 100%;
+	}
+	.generate-flex(@type, @number, (@i + 1));
+}
+// Justify and Align classes
 .justify-start {
 	justify-content: start;
 }

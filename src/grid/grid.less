@@ -1,0 +1,26 @@
+@grid-columns: 12;
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(@grid-columns, 1fr);
+
+	//Generate column classes for grid
+	.generate-grid(s,@grid-columns);
+
+	@media @from-mid {
+		.generate-grid(m,@grid-columns);
+	}
+	@media @from-large {
+		.generate-grid(l,@grid-columns);
+	}
+	@media @from-extra-large {
+		.generate-grid(xl,@grid-columns);
+	}
+}
+
+.generate-grid(@type, @number, @i: 1) when (@i =< @number) {
+	.@{type}@{i} {
+		grid-column: span @i;
+	}
+	.generate-grid(@type, @number, (@i + 1));
+}

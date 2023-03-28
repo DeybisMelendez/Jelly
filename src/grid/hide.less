@@ -1,15 +1,21 @@
 .hide-on-s {
-	@media screen and (max-width: 599px) {
+	display: none;
+}
+
+@media @from-mid {
+	.hide-on-m {
 		display: none;
 	}
 }
-.hide-on-m {
-	@media screen and (max-width: 899px) and (min-width: 600px) {
+
+@media @from-large {
+	.hide-on-l {
 		display: none;
 	}
 }
-.hide-on-l {
-	@media screen and (min-width: 900px) {
+
+@media @from-extra-large {
+	.hide-on-xl {
 		display: none;
 	}
 }

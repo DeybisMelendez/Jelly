@@ -1,0 +1,18 @@
+each(@colors,{
+    .@{key} {
+        color: @value;
+    }
+    .@{key}-bg {
+        background-color: @value;
+    }
+    .@{key}-border {
+        outline-style: solid;
+        outline-color: @value;
+    }
+})
+	.light-hover {
+	transition: @transition;
+}
+.light-hover:hover {
+	filter: brightness(1.1);
+}

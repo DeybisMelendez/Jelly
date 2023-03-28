@@ -1,11 +1,11 @@
+@borders: 2px, 4px, 6px, 8px, 10px;
+
+each(@borders,{
+    .border-@{index} {
+		outline-width: @value;
+    outline-offset: (-@value/2);
+    }
+});
 .box {
-	.shadow;
-	outline: 1px solid @black;
-	padding: 12px;
-}
-.push-down {
-	margin-bottom: 12px;
-}
-.push-up {
-	margin-top: 12px;
+	padding: 48px;
 }

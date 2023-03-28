@@ -5,7 +5,6 @@
 }
 
 body {
-	margin: 12px;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -13,22 +12,16 @@ ul {
 	list-style-type: none;
 }
 
-table {
-	border-collapse: collapse;
-	margin: 12px;
-	.shadow;
-	th,
-	td {
-		border: 1px solid black;
-		padding: 8px;
-		text-align: center;
+// Define el tamaño de fuente base para los títulos
+@h-size: 48px;
+
+// Ciclo for para definir los tamaños de fuente para cada etiqueta "h"
+.for(@i: 1) when (@i <= 6) {
+	h@{i} {
+		font-size: (@h-size - (@i*4));
 	}
-	th {
-		background-color: @blue;
-		color: @white;
-	}
-	tr {
-		background-color: @white;
-	}
-	transition: @transition;
+	.for(@i + 1);
 }
+
+// Llama al ciclo for para generar los tamaños de fuente
+.for();
