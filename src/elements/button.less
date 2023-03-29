@@ -1,16 +1,14 @@
 .button {
-	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	text-decoration: none;
 	text-align: center;
 	border: none;
 	padding: 6px 12px;
-	font-size: medium;
-	font-weight: 400;
 	transition: @transition;
-	box-shadow: 0px 1px 4px black;
+	box-shadow: @shadow;
+	border-radius: @border-radius;
 	cursor: pointer;
 	&:hover {
-		filter: brightness(1.1);
+		filter: @brightness;
 	}
 	&:disabled {
 		filter: grayscale(100%);

@@ -1,0 +1,13 @@
+@h-size: 48px;
+
+.for(@i: 1) when (@i <= 6) {
+	h@{i} {
+		font-size: (@h-size - (@i*4));
+	}
+	.for(@i + 1);
+}
+
+.for();
+p {
+	font-size: 18px;
+}
