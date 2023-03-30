@@ -5,15 +5,36 @@ each(@colors,{
     .@{key}-bg {
         background-color: @value;
     }
-    /*.@{key}-border {
-        outline-style: solid;
-        outline-color: @value;
-    }*/
+    .generate-variations(@key, @value);
+});
+each(@other-colors,{
+    .@{key} {
+        color: @value;
+    }
+    .@{key}-bg {
+        background-color: @value;
+    }
 });
 
 .light-hover {
 	transition: @transition;
 }
 .light-hover:hover {
-	filter: brightness(1.1);
+	filter: @brightness;
+}
+
+.generate-variations(@key, @color, @number:3, @i: 1) when (@i =< @number) {
+	.@{key}-lighten-@{i} {
+		color: lighten(@color, (5% * @i));
+	}
+	.@{key}-darken-@{i} {
+		color: darken(@color, (5% * @i));
+	}
+	.@{key}-lighten-@{i}-bg {
+		background-color: lighten(@color, (5% * @i));
+	}
+	.@{key}-darken-@{i}-bg {
+		background-color: darken(@color, (5% * @i));
+	}
+	.generate-variations(@key, @color, @number, (@i + 1));
 }

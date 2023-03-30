@@ -1,4 +1,4 @@
-input,
+/*input,
 select,
 textarea,
 button {
@@ -16,4 +16,44 @@ button {
 		outline: none;
 		box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 	}
+}*/
+/* Estilo base para inputs */
+.input-base {
+	display: block;
+	//width: 100%;
+	padding: 6px;
+	font-size: 16px;
+	line-height: 1.5;
+	color: gray;
+	background-color: #fff;
+	background-clip: padding-box;
+	border: 1px solid gray;
+	border-radius: @border-radius;
+	transition: @transition;
+}
+.focus-base {
+	&:focus {
+		outline: none;
+		box-shadow: @shadow;
+	}
+}
+
+input.full-width {
+	width: 100%;
+	margin-left: 0;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+textarea,
+select {
+	.input-base();
+	.focus-base();
+}
+input[type="checkbox"],
+input[type="radio"] {
+	display: inline-block;
+	.focus-base();
 }

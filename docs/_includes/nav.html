@@ -1,0 +1,17 @@
+<nav class="navbar teal-bg">
+	<a href="#" class="logo white">Jelly</a>
+	<a class="menu-toggle"><i class="material-icons white">menu</i></a>
+	<ul class="menu">
+		<a href="#" class="menu-item white">Tests</a>
+		<a href="#" class="menu-item white">Github</a>
+		<a href="/documentation" class="menu-item white">Documentation</a>
+	</ul>
+	<script>
+		const menuToggle = document.querySelector(".menu-toggle");
+		const menu = document.querySelector(".menu");
+
+		menuToggle.addEventListener("click", () => {
+			menu.classList.toggle("show-menu");
+		});
+	</script>
+</nav>

@@ -1,4 +1,33 @@
 .button {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	height: @padding*2;
+	margin: @margin;
+	padding: 0 @padding;
+	font-size: 14px;
+	font-weight: 500;
+	//color: #fff;
+	//background-color: #007bff;
+	border: none;
+	border-radius: @border-radius;
+	cursor: pointer;
+	text-decoration: none;
+	transition: @transition;
+
+	&:hover {
+		filter: @darkness;
+	}
+
+	&:focus {
+		outline: none;
+		border: none;
+		box-shadow: @shadow;
+	}
+}
+
+/*.button {
 	text-decoration: none;
 	text-align: center;
 	border: none;
@@ -14,3 +43,4 @@
 		filter: grayscale(100%);
 	}
 }
+*/
