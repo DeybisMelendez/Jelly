@@ -2,7 +2,7 @@
 
 .for(@i: 1) when (@i <= 6) {
 	h@{i} {
-		font-size: (@h-size - (@i*4));
+		font-size: (@h-size - (@i*2));
 	}
 	.for(@i + 1);
 }
@@ -10,4 +10,16 @@
 .for();
 p {
 	font-size: 18px;
+}
+p {
+	padding-bottom: 12px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-top: 12px;
+	margin-bottom: 12px;
 }
