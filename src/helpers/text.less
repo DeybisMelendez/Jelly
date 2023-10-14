@@ -1,9 +1,28 @@
-.center-text {
-	text-align: center;
+@text-align-options: left, right, center, justify, start, end, match-parent;
+@text-font-weight-options: 100,200,300,400,500,600,700,800,900,bold,bolder,lighter,normal;
+.generate-text-align(@index) when (@index > 0) {
+	@option: extract(@text-align-options, @index);
+	.text-align-@{option}{
+		text-align: @option;
+	}
 }
-.right-text {
-	text-align: right;
+
+.generate-font-weight(@index) when (@index > 0) {
+	@option: extract(@text-font-weight-options,@index);
+	.text-@{option}{
+		font-weight: @option;
+	}
 }
-.left-text {
-	text-align: left;
+
+.generate-text-align(length(@text-align-options));
+.generate-font-weight(length(@text-font-weight-options));
+
+.text-italic {
+	font-style: italic;
+}
+.text-underline {
+	text-decoration: underline;
+}
+.text-uppercase {
+	text-transform: uppercase;
 }

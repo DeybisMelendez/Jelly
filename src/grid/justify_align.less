@@ -1,0 +1,22 @@
+@justify-content-options: start, end, center, space-between, space-around,
+	stretch, baseline;
+
+.generate-justify-and-align(@index) when (@index > 0) {
+	@option: extract(@justify-content-options, @index);
+
+	.justify-content-@{option} {
+		justify-content: @option;
+	}
+	.justify-items-@{option} {
+		justify-items: @option;
+	}
+	.align-content-@{option} {
+		align-content: @option;
+	}
+	.align-items-@{option} {
+		align-items: @option;
+	}
+
+	.generate-justify-and-align(@index - 1);
+}
+.generate-justify-and-align(length(@justify-content-options));
