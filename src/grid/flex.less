@@ -9,17 +9,11 @@
 
 .flex {
 	display: flex;
-	flex-flow: row wrap;
-	//Generate columnsumn classes for grid
 	.generate-flex(s,@flex-columns);
-
-	@media @from-mid {
-		.generate-flex(m,@flex-columns);
-	}
-	@media @from-large {
-		.generate-flex(l,@flex-columns);
-	}
-	@media @from-extra-large {
-		.generate-flex(xl,@flex-columns);
-	}
+}
+.flex-col {
+	flex-flow: column wrap;
+}
+.flex-row {
+	flex-flow: row wrap;
 }

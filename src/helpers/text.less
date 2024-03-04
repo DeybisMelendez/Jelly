@@ -1,7 +1,5 @@
 @text-align-options: left, right, center, justify, start, end, match-parent;
 
-@text-font-weight-options: 100, 200, 300, 400, 500, 600, 700, 800, 900, bold, bolder, lighter, normal;
-
 .generate-text-align(@index) when (@index > 0) {
 	@option: extract(@text-align-options, @index);
 	.text-align-@{option}{
@@ -10,17 +8,11 @@
 	.generate-text-align(@index - 1);
 }
 
-.generate-font-weight(@index) when (@index > 0) {
-	@option: extract(@text-font-weight-options,@index);
-	.text-@{option}{
-		font-weight: @option;
-	}
-	.generate-font-weight(@index - 1);
-}
-
 .generate-text-align(length(@text-align-options));
-.generate-font-weight(length(@text-font-weight-options));
 
+.text-bold {
+	font-weight: bold;
+}
 .text-italic {
 	font-style: italic;
 }
@@ -29,4 +21,10 @@
 }
 .text-uppercase {
 	text-transform: uppercase;
+}
+.text-lowercase {
+	text-transform: lowercase;
+}
+.text-capitalize {
+	text-transform: capitalize;
 }
