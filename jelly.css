@@ -1,4 +1,6 @@
-* {
+*,
+::before,
+::after {
   margin: 0;
   padding: 0;
   border: 0;
@@ -6,8 +8,76 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   line-height: normal;
   color: #333;
-  text-align: left;
   text-decoration: none;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+table {
+  border-collapse: collapse;
+}
+a,
+button {
+  cursor: pointer;
+}
+.text-align-match-parent {
+  text-align: match-parent;
+}
+.text-align-end {
+  text-align: end;
+}
+.text-align-start {
+  text-align: start;
+}
+.text-align-justify {
+  text-align: justify;
+}
+.text-align-center {
+  text-align: center;
+}
+.text-align-right {
+  text-align: right;
+}
+.text-align-left {
+  text-align: left;
+}
+.text-bold {
+  font-weight: bold;
+}
+.text-italic {
+  font-style: italic;
+}
+.text-underline {
+  text-decoration: underline;
+}
+.text-uppercase {
+  text-transform: uppercase;
+}
+.text-lowercase {
+  text-transform: lowercase;
+}
+.text-capitalize {
+  text-transform: capitalize;
 }
 .red {
   color: #f44336;
@@ -146,45 +216,6 @@
 }
 .dark-hover:hover {
   filter: brightness(0.8) contrast(120%);
-}
-.text-align-match-parent {
-  text-align: match-parent;
-}
-.text-align-end {
-  text-align: end;
-}
-.text-align-start {
-  text-align: start;
-}
-.text-align-justify {
-  text-align: justify;
-}
-.text-align-center {
-  text-align: center;
-}
-.text-align-right {
-  text-align: right;
-}
-.text-align-left {
-  text-align: left;
-}
-.text-bold {
-  font-weight: bold;
-}
-.text-italic {
-  font-style: italic;
-}
-.text-underline {
-  text-decoration: underline;
-}
-.text-uppercase {
-  text-transform: uppercase;
-}
-.text-lowercase {
-  text-transform: lowercase;
-}
-.text-capitalize {
-  text-transform: capitalize;
 }
 .grid {
   display: grid;
