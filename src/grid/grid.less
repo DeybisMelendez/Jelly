@@ -1,15 +1,15 @@
 @grid-columns: 12;
 
 .grid {
-	display: grid;
-	grid-template-columns: repeat(@grid-columns, 1fr);
+  display: grid;
+  grid-template-columns: repeat(@grid-columns, 1fr);
 
-	.generate-grid(s,@grid-columns);
+  .generate-grid(s,@grid-columns);
 }
 
 .generate-grid(@type, @number, @i: 1) when (@i =< @number) {
-	.@{type}@{i} {
-		grid-column: span @i;
-	}
-	.generate-grid(@type, @number, (@i + 1));
+  .@{type}@{i} {
+    grid-column: span @i;
+  }
+  .generate-grid(@type, @number, (@i + 1));
 }

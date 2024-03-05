@@ -1,28 +1,28 @@
-@justify-options: start, end, center, space-between, space-around,space-evenly;
+@justify-options: start, end, center, space-between, space-around, space-evenly;
 @align-options: start, end, center, stretch, baseline;
 
 .generate-justify(@index) when (@index > 0) {
-	@option: extract(@justify-options, @index);
+  @option: extract(@justify-options, @index);
 
-	.justify-content-@{option} {
-		justify-content: @option;
-	}
-	.justify-items-@{option} {
-		justify-items: @option;
-	}
-	
-	.generate-justify(@index - 1);
+  .justify-content-@{option} {
+    justify-content: @option;
+  }
+  .justify-items-@{option} {
+    justify-items: @option;
+  }
+
+  .generate-justify(@index - 1);
 }
 
 .generate-align(@index) when (@index > 0) {
-	@option: extract(@align-options, @index);
-	.align-content-@{option} {
-		align-content: @option;
-	}
-	.align-items-@{option} {
-		align-items: @option;
-	}
-	.generate-align(@index - 1);
+  @option: extract(@align-options, @index);
+  .align-content-@{option} {
+    align-content: @option;
+  }
+  .align-items-@{option} {
+    align-items: @option;
+  }
+  .generate-align(@index - 1);
 }
 
 .generate-justify(length(@justify-options));

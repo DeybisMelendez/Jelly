@@ -1,19 +1,19 @@
 @flex-columns: 12;
 
 .generate-flex(@type, @number, @i: 1) when (@i =< @number) {
-	.@{type}@{i} {
-		flex-basis: (@i / @number) * 100%;
-	}
-	.generate-flex(@type, @number, (@i + 1));
+  .@{type}@{i} {
+    flex-basis: (@i / @number) * 100%;
+  }
+  .generate-flex(@type, @number, (@i + 1));
 }
 
 .flex {
-	display: flex;
-	.generate-flex(s,@flex-columns);
+  display: flex;
+  .generate-flex(s,@flex-columns);
 }
 .flex-col {
-	flex-flow: column wrap;
+  flex-flow: column wrap;
 }
 .flex-row {
-	flex-flow: row wrap;
+  flex-flow: row wrap;
 }
