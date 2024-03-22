@@ -19,6 +19,9 @@
   each(@colors,{
     --color-@{key}:@value;
   });
+  each(@colors-dark,{
+    --color-@{key}-dark:@value;
+  });
 }
 
 body {

@@ -1,4 +1,52 @@
-each(@colors,{
+@colors-variables: {
+  red: var(--color-red);
+  pink: var(--color-pink);
+  purple: var(--color-purple);
+  deep-purple: var(--color-deep-purple);
+  indigo: var(--color-indigo);
+  blue: var(--color-blue);
+  light-blue: var(--color-light-blue);
+  cyan: var(--color-cyan);
+  teal: var(--color-teal);
+  green: var(--color-green);
+  light-green: var(--color-light-green);
+  lime: var(--color-lime);
+  yellow: var(--color-yellow);
+  amber: var(--color-amber);
+  orange: var(--color-orange);
+  deep-orange: var(--color-deep-orange);
+  brown: var(--color-brown);
+  grey: var(--color-grey);
+  blue-grey: var(--color-blue-grey);
+  black: var(--color-black);
+  white: var(--color-white);
+};
+
+@colors-dark-variables: {
+  red: var(--color-red-dark);
+  pink: var(--color-pink-dark);
+  purple: var(--color-purple-dark);
+  deep-purple: var(--color-deep-purple-dark);
+  indigo: var(--color-indigo-dark);
+  blue: var(--color-blue-dark);
+  light-blue: var(--color-light-blue-dark);
+  cyan: var(--color-cyan-dark);
+  teal: var(--color-teal-dark);
+  green: var(--color-green-dark);
+  light-green: var(--color-light-green-dark);
+  lime: var(--color-lime-dark);
+  yellow: var(--color-yellow-dark);
+  amber: var(--color-amber-dark);
+  orange: var(--color-orange-dark);
+  deep-orange: var(--color-deep-orange-dark);
+  brown: var(--color-brown-dark);
+  grey: var(--color-grey-dark);
+  blue-grey: var(--color-blue-grey-dark);
+  black: var(--color-black-dark);
+  white: var(--color-white-dark);
+};
+
+each(@colors-variables,{
     .@{key} {
         color: @value;
     }
@@ -8,7 +56,7 @@ each(@colors,{
 });
 
 @media (prefers-color-scheme: dark) {
-  each(@colors-dark,{
+  each(@colors-dark-variables,{
     .@{key} {
         color: @value;
     }
