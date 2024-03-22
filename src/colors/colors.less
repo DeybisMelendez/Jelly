@@ -1,0 +1,19 @@
+each(@colors,{
+    .@{key} {
+        color: @value;
+    }
+    .@{key}-bg {
+        background-color: @value;
+    }
+});
+
+@media (prefers-color-scheme: dark) {
+  each(@colors-dark,{
+    .@{key} {
+        color: @value;
+    }
+    .@{key}-bg {
+        background-color: @value;
+    }
+  });
+}

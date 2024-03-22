@@ -1,0 +1,18 @@
+@side-properties: {
+  t: top;
+  b: bottom;
+  l: left;
+  r: right;
+};
+each(@side-properties,{
+    .margin-padding-loop(@index, @maxIndex) when (@index =< @maxIndex) {
+      .m@{key}-@{index} {
+      margin-@{value}: unit((@index / 2), rem);
+      }
+      .p@{key}-@{index} {
+        padding-@{value}: unit((@index / 2), rem);
+      }
+      .margin-padding-loop((@index + 1), @maxIndex);
+    }
+    .margin-padding-loop(1, 6);
+  });
