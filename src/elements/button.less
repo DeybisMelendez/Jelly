@@ -2,12 +2,46 @@
   display: inline-block;
   cursor: pointer;
   padding: 0.5rem 1rem;
-  margin: 0.5rem 1rem;
+  margin: 6px 6px;
   border-radius: 4px;
   text-align: center;
   border: 1px solid rgba(0, 0, 0, 0.2);
   transition: @transition;
 }
-.button:hover {
+.button:not(:disabled):not(.button-disabled):hover {
   filter: @brightness;
+}
+.button:disabled,
+.button[disabled],
+.button-disabled {
+  cursor: not-allowed;
+  filter: none;
+  opacity: 0.6;
+}
+.button .button-small {
+  font-size: 0.75em;
+}
+.button-large {
+  font-size: 1.5em;
+}
+
+.button-group {
+  margin: 6px 6px;
+}
+
+.button-group .button {
+  float: left;
+  margin: 0px;
+  padding: 0.5rem 0.5rem;
+  border-radius: 0px;
+  border: 0;
+}
+
+.button-group :first-child {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+.button-group :last-child {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
 }

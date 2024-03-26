@@ -7,12 +7,12 @@
 each(@side-properties,{
     .margin-padding-loop(@index, @maxIndex) when (@index =< @maxIndex) {
       .m@{key}-@{index} {
-      margin-@{value}: unit((@index / 2), rem);
+      margin-@{value}: unit((@index * 6), px) !important;
       }
       .p@{key}-@{index} {
-        padding-@{value}: unit((@index / 2), rem);
+        padding-@{value}: unit((@index * 6 ), px) !important;
       }
       .margin-padding-loop((@index + 1), @maxIndex);
     }
-    .margin-padding-loop(1, 6);
+    .margin-padding-loop(0, 3);
   });
